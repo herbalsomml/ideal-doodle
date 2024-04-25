@@ -1,0 +1,17 @@
+  <!-- Fansly block -->
+  <div class="container mt-5 mb-5">
+    <div class="row">
+        <div class="col-md-6 d-flex justify-content-center align-items-center">
+            <img class="shadow-lg d-img" src="{{ settings_list.fansly_block_image }}">
+        </div>
+        <div class="col-md-6">
+            <h1 class="text-center font-weight-normal mb-5 mt-5" id="links">{{ settings_list.fansly_block_header }}</h1>
+            {% autoescape off %}{{ settings_list.fansly_block_text | safe }}{% endautoescape %}
+            <div class="btn-fansly-borders">
+                <a target="_blank" href="{{ settings_list.fansly_url }}" class="text-decoration-none">
+                    <button class="btn-fansly"><i class="fa fa-key"></i> {{ settings_list.fansly_button_text }}</button>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

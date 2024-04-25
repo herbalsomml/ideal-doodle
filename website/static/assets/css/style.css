@@ -1,0 +1,813 @@
+.a-item {
+  max-width: 1920px;
+  max-height: 550px;
+}
+
+.a-img {
+  background-color: #34495e;
+  height: 550px;
+  object-fit: cover;
+  filter: brightness(0.6);
+}
+.a-img:before {
+  content: "Nothing loaded";
+
+}
+
+.b-item {
+  height: 480px;
+}
+.b-img {
+  background-color: #34495e;
+  height: 480px;
+  object-fit: cover;
+  overflow: hidden;
+}
+.b-img:before {
+  content: "";
+  position: absolute;
+  height: 480px;
+  object-fit: cover;
+  overflow: hidden;
+  width: 80%;
+  background-image: url("https://img.freepik.com/free-photo/vertical-shot-cute-cat-background-field_181624-56606.jpg");
+  background-size: cover; /* Заполняем блок */
+  background-position: center; /* Центрируем изображение */
+}
+
+.d-img {
+  background-color: #34495e;
+  object-fit: cover;
+  overflow: hidden;
+  max-height: 35em;
+  width: auto;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font: 16px / 1.4 sans-serif;
+}
+h1 {
+  font-size: 2em;
+  font-weight: bold;
+  color: white;
+}
+.wrap {
+  background: #1e2124;
+  max-width: 100%;
+  margin: auto;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.items-wrap {
+  position: relative;
+  display: flex;
+  overflow: hidden;
+  user-select: none;
+}
+.items {
+  flex-shrink: 0;
+  display: flex;
+  counter-reset: item;
+  justify-content: space-around;
+  min-width: 100%;
+}
+.item {
+  background: #ccc;
+  flex: 0 0 auto;
+  width: 100px;
+  height: 100px;
+  counter-increment: item;
+  border-radius: 6px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 25px;
+  font-weight: bold;
+  color: #fff;
+  margin: 10px 0;
+  transition: all 0.1s ease-in-out;
+}
+
+.item:before {
+  content: counter(item);
+}
+
+.marquee {
+  animation: scroll 20s linear infinite;
+}
+.reverce {
+  animation-direction: reverse;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0)
+    }
+    100% {
+        transform: translateX(-50%)
+    }
+}
+
+
+.btn-load {
+  appearance: button;
+  background-color: #1e2124;
+  background-image: none;
+  border: 1px solid #000;
+  border-radius: 4px;
+  box-shadow: #fff 4px 4px 0 0,#000 4px 4px 0 1px;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: ITCAvantGardeStd-Bk,Arial,sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  margin: 0 5px 10px 0;
+  overflow: visible;
+  padding: 12px 40px;
+  text-align: center;
+  text-transform: none;
+  touch-action: manipulation;
+  user-select: none;
+  -webkit-user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+.btn-load:hover {
+  text-decoration: none
+}
+
+.btn-load:active {
+  box-shadow: rgba(0, 0, 0, .125) 0 3px 5px inset;
+  outline: 0;
+}
+
+.btn-load:not([disabled]):active {
+  box-shadow: #fff 2px 2px 0 0, #000 2px 2px 0 1px;
+  transform: translate(2px, 2px);
+}
+
+.btn-subscribe {
+  padding: 15px 20px;
+  border: none;
+  outline: none;
+  background-color: #6c5ce7;
+  color: white;
+  border-radius: 7px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease-out;
+}
+
+.btn-subscribe:hover {
+  transform: translateY(-3px);
+}
+
+.btn-subscribe-span {
+  color: #dfe6e9;
+}
+
+.btn-watch {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  border: none;
+  background: none;
+  color: none;
+  cursor: pointer;
+  position: relative;
+  padding: 8px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 14px;
+  transition: all .15s ease;
+}
+
+.btn-watch::before,
+.btn-watch::after {
+  content: '';
+  display: block;
+  position: absolute;
+  right: 0;
+  left: 0;
+  height: calc(50% - 5px);
+  border: 2px solid white;
+  transition: all .15s ease;
+}
+
+.btn-watch::before {
+  top: 0;
+  border-bottom-width: 0;
+}
+
+.btn-watch::after {
+  bottom: 0;
+  border-top-width: 0;
+}
+
+.btn-watch:active::before {
+  top: 3px;
+  left: 6px;
+  right: 6px;
+}
+
+.btn-watch:active::after {
+  bottom: 3px;
+  left: 6px;
+  right: 6px;
+}
+
+.btn-watch_lg {
+  position: relative;
+  display: block;
+  padding: 10px 20px;
+  color: white;
+  background-color: none;
+  overflow: hidden;
+  box-shadow: inset 0px 0px 0px 1px transparent;
+}
+
+.btn-watch_sl {
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: -1px;
+  left: -8px;
+  width: 0;
+  background-color: #008ee8;
+  transform: skew(-15deg);
+  transition: all .2s ease;
+}
+
+.btn-watch_text {
+  position: relative;
+}
+
+.btn-watch:hover {
+  color: #0f1923;
+}
+
+.btn-watch:hover .button_sl {
+  width: calc(100% + 15px);
+}
+
+.btn-watch:hover .button_lg::after {
+  background-color: #fff;
+}
+
+.btn-fansly {
+ font-family: 'Ropa Sans', sans-serif;
+    /* font-family: 'Valorant', sans-serif; */
+ color: white;
+ cursor: pointer;
+ font-size: 13px;
+ font-weight: bold;
+ letter-spacing: 0.05rem;
+ border: 1px solid #008ee8;
+ padding: 0.8rem 2.1rem;
+ background-color: #008ee8;
+ background-size: 200%;
+ background-position: 200%;
+ background-repeat: no-repeat;
+ transition: 0.3s ease-in-out;
+ transition-property: background-position, border, color;
+ position: relative;
+ z-index: 1;
+}
+
+.btn-fansly:hover {
+ border: 1px solid #008ee8;
+ color: white;
+ background-position: 40%;
+}
+
+.btn-fansly:before {
+ content: "";
+ position: absolute;
+ background-color: #008ee8;
+ width: 0.2rem;
+ height: 0.2rem;
+ top: -1px;
+ left: -1px;
+ transition: background-color 0.15s ease-in-out;
+}
+
+.btn-fansly:hover:before {
+ background-color: white;
+}
+
+.btn-fansly:hover:after {
+ background-color: white;
+}
+
+.btn-fansly:after {
+ content: "";
+ position: absolute;
+ background-color: #008ee8;
+ width: 0.3rem;
+ height: 0.3rem;
+ bottom: -1px;
+ right: -1px;
+ transition: background-color 0.15s ease-in-out;
+}
+
+.btn-fansly-borders {
+ position: relative;
+ width: fit-content;
+ height: fit-content;
+}
+
+.btn-fansly-borders:before {
+ content: "";
+ position: absolute;
+ width: calc(100% + 0.5em);
+ height: 50%;
+ left: -0.3em;
+ top: -0.3em;
+ border: 2px solid #008ee8;
+ border-bottom: 0px;
+    /* opacity: 0.3; */
+}
+
+.btn-fansly-borders:after {
+ content: "";
+ position: absolute;
+ width: calc(100% + 0.5em);
+ height: 50%;
+ left: -0.3em;
+ bottom: -0.3em;
+ border: 2px solid #008ee8;
+ border-top: 0px;
+    /* opacity: 0.3; */
+ z-index: 0;
+}
+
+.shape {
+ fill: #0E1822;
+}
+
+.btn-chaturbate {
+ font-family: 'Ropa Sans', sans-serif;
+    /* font-family: 'Valorant', sans-serif; */
+ color: white;
+ cursor: pointer;
+ font-size: 13px;
+ font-weight: bold;
+ letter-spacing: 0.05rem;
+ border: 1px solid #f6863d;
+ padding: 0.8rem 2.1rem;
+ background-color: #f6863d;
+ background-size: 200%;
+ background-position: 200%;
+ background-repeat: no-repeat;
+ transition: 0.3s ease-in-out;
+ transition-property: background-position, border, color;
+ position: relative;
+ z-index: 1;
+}
+
+.btn-chaturbate:hover {
+ border: 1px solid #f6863d;
+ color: white;
+ background-position: 40%;
+}
+
+.btn-chaturbate:before {
+ content: "";
+ position: absolute;
+ background-color: #f6863d;
+ width: 0.2rem;
+ height: 0.2rem;
+ top: -1px;
+ left: -1px;
+ transition: background-color 0.15s ease-in-out;
+}
+
+.btn-chaturbate:hover:before {
+ background-color: white;
+}
+
+.btn-chaturbate:hover:after {
+ background-color: white;
+}
+
+.btn-chaturbate:after {
+ content: "";
+ position: absolute;
+ background-color: #f6863d;
+ width: 0.3rem;
+ height: 0.3rem;
+ bottom: -1px;
+ right: -1px;
+ transition: background-color 0.15s ease-in-out;
+}
+
+.btn-chaturbate-borders {
+ position: relative;
+ width: fit-content;
+ height: fit-content;
+}
+
+.btn-chaturbate-borders:before {
+ content: "";
+ position: absolute;
+ width: calc(100% + 0.5em);
+ height: 50%;
+ left: -0.3em;
+ top: -0.3em;
+ border: 2px solid #f6863d;
+ border-bottom: 0px;
+    /* opacity: 0.3; */
+}
+
+.btn-chaturbate-borders:after {
+ content: "";
+ position: absolute;
+ width: calc(100% + 0.5em);
+ height: 50%;
+ left: -0.3em;
+ bottom: -0.3em;
+ border: 2px solid #f6863d;
+ border-top: 0px;
+    /* opacity: 0.3; */
+ z-index: 0;
+}
+
+.btn-stripchat {
+ font-family: 'Ropa Sans', sans-serif;
+    /* font-family: 'Valorant', sans-serif; */
+ color: white;
+ cursor: pointer;
+ font-size: 13px;
+ font-weight: bold;
+ letter-spacing: 0.05rem;
+ border: 1px solid #96202c;
+ padding: 0.8rem 2.1rem;
+ background-color: #96202c;
+ background-size: 200%;
+ background-position: 200%;
+ background-repeat: no-repeat;
+ transition: 0.3s ease-in-out;
+ transition-property: background-position, border, color;
+ position: relative;
+ z-index: 1;
+}
+
+.btn-stripchat:hover {
+ border: 1px solid #96202c;
+ color: white;
+ background-position: 40%;
+}
+
+.btn-stripchat:before {
+ content: "";
+ position: absolute;
+ background-color: #96202c;
+ width: 0.2rem;
+ height: 0.2rem;
+ top: -1px;
+ left: -1px;
+ transition: background-color 0.15s ease-in-out;
+}
+
+.btn-stripchat:hover:before {
+ background-color: white;
+}
+
+.btn-stripchat:hover:after {
+ background-color: white;
+}
+
+.btn-stripchat:after {
+ content: "";
+ position: absolute;
+ background-color: #96202c;
+ width: 0.3rem;
+ height: 0.3rem;
+ bottom: -1px;
+ right: -1px;
+ transition: background-color 0.15s ease-in-out;
+}
+
+.btn-stripchat-borders {
+ position: relative;
+ width: fit-content;
+ height: fit-content;
+}
+
+.btn-stripchat-borders:before {
+ content: "";
+ position: absolute;
+ width: calc(100% + 0.5em);
+ height: 50%;
+ left: -0.3em;
+ top: -0.3em;
+ border: 2px solid #96202c;
+ border-bottom: 0px;
+    /* opacity: 0.3; */
+}
+
+.btn-stripchat-borders:after {
+ content: "";
+ position: absolute;
+ width: calc(100% + 0.5em);
+ height: 50%;
+ left: -0.3em;
+ bottom: -0.3em;
+ border: 2px solid #96202c;
+ border-top: 0px;
+    /* opacity: 0.3; */
+ z-index: 0;
+}
+
+.btn-instagram {
+ font-family: 'Ropa Sans', sans-serif;
+    /* font-family: 'Valorant', sans-serif; */
+ color: white;
+ cursor: pointer;
+ font-size: 13px;
+ font-weight: bold;
+ letter-spacing: 0.05rem;
+ border: 1px solid #e1595d;
+ padding: 0.8rem 2.1rem;
+ background-color: #e1595d;
+ background-size: 200%;
+ background-position: 200%;
+ background-repeat: no-repeat;
+ transition: 0.3s ease-in-out;
+ transition-property: background-position, border, color;
+ position: relative;
+ z-index: 1;
+}
+
+.btn-instagram:hover {
+ border: 1px solid #e1595d;
+ color: white;
+ background-position: 40%;
+}
+
+.btn-instagram:before {
+ content: "";
+ position: absolute;
+ background-color: #e1595d;
+ width: 0.2rem;
+ height: 0.2rem;
+ top: -1px;
+ left: -1px;
+ transition: background-color 0.15s ease-in-out;
+}
+
+.btn-instagram:hover:before {
+ background-color: white;
+}
+
+.btn-instagram:hover:after {
+ background-color: white;
+}
+
+.btn-instagram:after {
+ content: "";
+ position: absolute;
+ background-color: #e1595d;
+ width: 0.3rem;
+ height: 0.3rem;
+ bottom: -1px;
+ right: -1px;
+ transition: background-color 0.15s ease-in-out;
+}
+
+.btn-instagram-borders {
+ position: relative;
+ width: fit-content;
+ height: fit-content;
+}
+
+.btn-instagram-borders:before {
+ content: "";
+ position: absolute;
+ width: calc(100% + 0.5em);
+ height: 50%;
+ left: -0.3em;
+ top: -0.3em;
+ border: 2px solid #e1595d;
+ border-bottom: 0px;
+    /* opacity: 0.3; */
+}
+
+.btn-instagram-borders:after {
+ content: "";
+ position: absolute;
+ width: calc(100% + 0.5em);
+ height: 50%;
+ left: -0.3em;
+ bottom: -0.3em;
+ border: 2px solid #e1595d;
+ border-top: 0px;
+    /* opacity: 0.3; */
+ z-index: 0;
+}
+
+.btn-twitter {
+ font-family: 'Ropa Sans', sans-serif;
+    /* font-family: 'Valorant', sans-serif; */
+ color: white;
+ cursor: pointer;
+ font-size: 13px;
+ font-weight: bold;
+ letter-spacing: 0.05rem;
+ border: 1px solid #0095e8;
+ padding: 0.8rem 2.1rem;
+ background-color: #0095e8;
+ background-size: 200%;
+ background-position: 200%;
+ background-repeat: no-repeat;
+ transition: 0.3s ease-in-out;
+ transition-property: background-position, border, color;
+ position: relative;
+ z-index: 1;
+}
+
+.btn-twitter:hover {
+ border: 1px solid #0095e8;
+ color: white;
+ background-position: 40%;
+}
+
+.btn-twitter:before {
+ content: "";
+ position: absolute;
+ background-color: #0095e8;
+ width: 0.2rem;
+ height: 0.2rem;
+ top: -1px;
+ left: -1px;
+ transition: background-color 0.15s ease-in-out;
+}
+
+.btn-twitter:hover:before {
+ background-color: white;
+}
+
+.btn-twitter:hover:after {
+ background-color: white;
+}
+
+.btn-twitter:after {
+ content: "";
+ position: absolute;
+ background-color: #0095e8;
+ width: 0.3rem;
+ height: 0.3rem;
+ bottom: -1px;
+ right: -1px;
+ transition: background-color 0.15s ease-in-out;
+}
+
+.btn-twitter-borders {
+ position: relative;
+ width: fit-content;
+ height: fit-content;
+}
+
+.btn-twitter-borders:before {
+ content: "";
+ position: absolute;
+ width: calc(100% + 0.5em);
+ height: 50%;
+ left: -0.3em;
+ top: -0.3em;
+ border: 2px solid #0095e8;
+ border-bottom: 0px;
+    /* opacity: 0.3; */
+}
+
+.btn-twitter-borders:after {
+ content: "";
+ position: absolute;
+ width: calc(100% + 0.5em);
+ height: 50%;
+ left: -0.3em;
+ bottom: -0.3em;
+ border: 2px solid #0095e8;
+ border-top: 0px;
+    /* opacity: 0.3; */
+ z-index: 0;
+}
+
+.btn-telegram {
+ font-family: 'Ropa Sans', sans-serif;
+    /* font-family: 'Valorant', sans-serif; */
+ color: white;
+ cursor: pointer;
+ font-size: 13px;
+ font-weight: bold;
+ letter-spacing: 0.05rem;
+ border: 1px solid #0ea1d7;
+ padding: 0.8rem 2.1rem;
+ background-color: #0ea1d7;
+ background-size: 200%;
+ background-position: 200%;
+ background-repeat: no-repeat;
+ transition: 0.3s ease-in-out;
+ transition-property: background-position, border, color;
+ position: relative;
+ z-index: 1;
+}
+
+.btn-telegram:hover {
+ border: 1px solid #0ea1d7;
+ color: white;
+ background-position: 40%;
+}
+
+.btn-telegram:before {
+ content: "";
+ position: absolute;
+ background-color: #0ea1d7;
+ width: 0.2rem;
+ height: 0.2rem;
+ top: -1px;
+ left: -1px;
+ transition: background-color 0.15s ease-in-out;
+}
+
+.btn-telegram:hover:before {
+ background-color: white;
+}
+
+.btn-telegram:hover:after {
+ background-color: white;
+}
+
+.btn-telegram:after {
+ content: "";
+ position: absolute;
+ background-color: #0ea1d7;
+ width: 0.3rem;
+ height: 0.3rem;
+ bottom: -1px;
+ right: -1px;
+ transition: background-color 0.15s ease-in-out;
+}
+
+.btn-telegram-borders {
+ position: relative;
+ width: fit-content;
+ height: fit-content;
+}
+
+.btn-telegram-borders:before {
+ content: "";
+ position: absolute;
+ width: calc(100% + 0.5em);
+ height: 50%;
+ left: -0.3em;
+ top: -0.3em;
+ border: 2px solid #0ea1d7;
+ border-bottom: 0px;
+    /* opacity: 0.3; */
+}
+
+.btn-telegram-borders:after {
+ content: "";
+ position: absolute;
+ width: calc(100% + 0.5em);
+ height: 50%;
+ left: -0.3em;
+ bottom: -0.3em;
+ border: 2px solid #0ea1d7;
+ border-top: 0px;
+    /* opacity: 0.3; */
+ z-index: 0;
+}
+
+#btn-top {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  background-color: #1e2124;
+  color: white;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 4px;
+}
+
+#btn-top:hover {
+  background-color: #555;
+}
+
+.not-visible {
+  display: none;
+}

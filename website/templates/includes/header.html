@@ -1,0 +1,29 @@
+{% load static %}
+  <!-- Header -->
+  <header class="p-3 bg-dark text-white">
+    <div class="container">
+      <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+        <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+          <li>
+            <a class="nav-link px-2 text-white" href="#videos">{{ settings_list.videos_button_nav_text }}</a>
+          </li>
+          <li>
+            <a class="nav-link px-2 text-white" href="#links">{{ settings_list.links_button_nav_text }}</a>
+          </li>
+          <li>
+            <a class="nav-link px-2 text-white" href="#qa">{{ settings_list.qa_button_nav_text }}</a>
+          </li>
+        </ul>
+        <div class="text-end">
+          <a target="_blank" class="btn btn-outline-light btn-floating m-1" data-mdb-button-init="" data-mdb-ripple-init="" href="{{ settings_list.instagram_url }}" role="button">
+            <i class="fa fa-instagram"></i></a> 
+          <a target="_blank" class="btn btn-outline-light btn-floating m-1" data-mdb-button-init="" data-mdb-ripple-init="" href="{{ settings_list.twitter_url }}" role="button">
+            <i class="fa fa-twitter"></i></a>
+            <a target="_blank" class="btn btn-outline-light btn-floating m-1" data-mdb-button-init="" data-mdb-ripple-init="" href="{{ settings_list.telegram_url }}" role="button"><i class="fa fa-telegram"></i></a>
+            <a target="_blank" class="text-decoration-none" href="{{ settings_list.fansly_url }}">
+            <button class="btn-subscribe" style=" margin-left: 1em;"><i class="fa fa-key"></i> {{ settings_list.subscribe_button_text_one }} <span class="btn-subscribe-span">{{ settings_list.subscribe_button_text_two }}</span></button>
+            </a>
+        </div>
+      </div>
+    </div>
+  </header>
