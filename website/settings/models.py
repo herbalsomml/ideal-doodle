@@ -84,8 +84,7 @@ class SiteSettings(models.Model):
         max_length=256,
         verbose_name='Ссылка на Chaturbate',
         blank=False,
-        default=('https://chaturbate.com/in/?tour=dT8X&campaign'''
-                 '''=rvN8K&track=default&room=herbal_sommelier''')
+        default='https://chaturbate.com/in/?tour=dT8X&campaign=rvN8K&track=default&room=herbal_sommelier'
     )
     stripchat_url = models.URLField(
         max_length=256,
@@ -107,8 +106,7 @@ class SiteSettings(models.Model):
     running_line_text = models.CharField(
         verbose_name='Текст бегущей строки',
         blank=False,
-        default=('FIRST MONTH -20% • A LOT OF HOT CONTENT '''
-                 '''• $0,32 PER A DAY • SUBSCRIBE AND WATCH!'''),
+        default='FIRST MONTH -20% • A LOT OF HOT CONTENT • $0,32 PER A DAY • SUBSCRIBE AND WATCH!',
         max_length=1024
     )
     fansly_block_header = models.TextField(
@@ -123,13 +121,7 @@ class SiteSettings(models.Model):
     )
     fansly_block_text = models.TextField(
         blank=False,
-        default=('<h3>🔥 A lot of hot videos and photos</h3><h3>📷 '''
-                 '''New photo every day</h3><h3>'''
-                 '''📹 New long video every few days</h3><h3>💬 ''
-                 ''''Private messages and chat with '''
-                 '''me</h3><h3>🎫 Free entry to ticket shows'''
-                 ''' on Chaturbate</h3>'''
-                 '''<h3>🎁 Special gift</h3><br>'''),
+        default='<h3>🔥 A lot of hot videos and photos</h3><h3>📷 New photo every day</h3><h3>📹 New long video every few days</h3><h3>💬 Private messages and chat with me</h3><h3>🎫 Free entry to ticket shows on Chaturbate</h3><h3>🎁 Special gift</h3><br>',
         verbose_name='Текст блока Fansly'
     )
     fansly_button_text = models.CharField(
@@ -150,8 +142,7 @@ class SiteSettings(models.Model):
     )
     webcam_block_text = models.TextField(
         blank=False,
-        default=('<h3>We can chat together, do naughty things,'''
-                 ''' or just have a great time together 😊</h3><br>'''),
+        default='<h3>We can chat together, do naughty things, or just have a great time together 😊</h3><br>',
         verbose_name='Текст блока Webcam'
     )
     social_media_block_header = models.TextField(
@@ -167,9 +158,7 @@ class SiteSettings(models.Model):
     social_media_block_text = models.TextField(
         verbose_name='Текст блока социальных сетей',
         blank=False,
-        default=(
-            '''<h3>Enjoy free videos, photos and new announcements '''
-            '''every day.</h3><h3>It\'s really hot!</h3><br>''')
+        default='<h3>Enjoy free videos, photos and new announcements every day.</h3><h3>It\'s really hot!</h3><br>',
     )
     qa_block_header = models.TextField(
         verbose_name='Заголовок блока вопрос ответ',
