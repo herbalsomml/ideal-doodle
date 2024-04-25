@@ -14,14 +14,16 @@
             <a class="nav-link px-2 text-white" href="#qa">{{ settings_list.qa_button_nav_text }}</a>
           </li>
         </ul>
-        <div class="text-end">
+        <div style="text-align: center !important;" class="text-end justify-content-center mt-2 mb-2">
           <a target="_blank" class="btn btn-outline-light btn-floating m-1" data-mdb-button-init="" data-mdb-ripple-init="" href="{{ settings_list.instagram_url }}" role="button">
-            <i class="fa fa-instagram"></i></a> 
+            <i class="fa fa-instagram"></i></a>
           <a target="_blank" class="btn btn-outline-light btn-floating m-1" data-mdb-button-init="" data-mdb-ripple-init="" href="{{ settings_list.twitter_url }}" role="button">
             <i class="fa fa-twitter"></i></a>
             <a target="_blank" class="btn btn-outline-light btn-floating m-1" data-mdb-button-init="" data-mdb-ripple-init="" href="{{ settings_list.telegram_url }}" role="button"><i class="fa fa-telegram"></i></a>
-            <a target="_blank" class="text-decoration-none" href="{{ settings_list.fansly_url }}">
-            <button class="btn-subscribe" style=" margin-left: 1em;"><i class="fa fa-key"></i> {{ settings_list.subscribe_button_text_one }} <span class="btn-subscribe-span">{{ settings_list.subscribe_button_text_two }}</span></button>
+        </div>
+        <div style="text-align: center !important;" class="text-end justify-content-center">
+            <a target="_blank" style="margin-right: 1.2em;margin-left:1.2em;" class="text-decoration-none" href="{{ settings_list.fansly_url }}">
+            <button class="btn-subscribe"><i class="fa fa-key"></i> {{ settings_list.subscribe_button_text_one }} <span class="btn-subscribe-span">{{ settings_list.subscribe_button_text_two }}</span></button>
             </a>
         </div>
       </div>

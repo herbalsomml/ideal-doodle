@@ -28,7 +28,7 @@ const handleGetData = () => {
                                                   <p class="lead text-white">${video.short_description}</p>
                                                 <div>
                                                 <div class="bg-light shadow mx-auto" style="width: 80%;height: auto;border-radius: 21px 21px 0 0;">
-                                                <img class="card-img-top w-100 b-img" src="${video.image}"></div>
+                                                <img class="card-img-top w-100 b-img" src="${video.image.url}"></div>
                                                 </div></a>
 
                                             </div>`

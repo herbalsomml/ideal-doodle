@@ -1,24 +1,24 @@
       <!-- Webcam -->
-<hr>
-        <div class="container mt-5 mb-5">
-          <div class="row">
-              <div class="col-md-6 d-flex justify-content-center align-items-center">
-                <img class="shadow-lg d-img" src="{{ settings_list.webcam_block_image }}">
-            </div>
+      <hr>
+      <div class="container mt-5 mb-5">
+        <div class="row">
+            <div class="col-md-6 d-flex justify-content-center align-items-center">
+              <img class="shadow-lg d-img" src="{{ settings_list.webcam_block_image.url }}">
+          </div>
 
-            <div class="col-md-6">
-              <h1 class="text-center font-weight-normal mb-5 mt-5" id="links">{{ settings_list.webcam_block_header }}</h1>
-              {% autoescape off %}{{ settings_list.webcam_block_text | safe }}{% endautoescape %}
-              <div class="btn-chaturbate-borders mb-2">
-                <a target="_blank" class="text-decoration-none" href="{{ settings_list.chaturbate_url }}">
-                <button class="btn-chaturbate"><i class="fa fa-camera"></i> Chaddddturbate</button>
-                </a>
-              </div><br>
-              <div class="btn-stripchat-borders mb-3">
-                <a target="_blank" class="text-decoration-none" href="{{ settings_list.stripchat_url }}">
-                <button class="btn-stripchat"><i class="fa fa-camera"></i> Stripchat</button>
-                </a>
-              </div>
-          </div>
-          </div>
-      </div>
+          <div class="col-md-6">
+            <h1 class="text-center font-weight-normal mb-5 mt-5" id="links">{{ settings_list.webcam_block_header }}</h1>
+            {% autoescape off %}{{ settings_list.webcam_block_text | safe }}{% endautoescape %}
+            <div class="btn-chaturbate-borders mb-2">
+              <a target="_blank" class="text-decoration-none" href="{{ settings_list.chaturbate_url }}">
+              <button class="btn-chaturbate"><i class="fa fa-camera"></i> Chaturbate</button>
+              </a>
+            </div><br>
+            <div class="btn-stripchat-borders mb-3">
+              <a target="_blank" class="text-decoration-none" href="{{ settings_list.stripchat_url }}">
+              <button class="btn-stripchat"><i class="fa fa-camera"></i> Stripchat</button>
+              </a>
+            </div>
+        </div>
+        </div>
+    </div>
