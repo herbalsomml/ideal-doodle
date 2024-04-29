@@ -34,27 +34,29 @@ Windows:
   pip install -r requirements.txt
 ```
 
-#### 4️. Go to MemberInfoWeb:
+#### 4. Copy .env.example, rename it to .env and fill with your data
+
+#### 5. Go to MemberInfoWeb:
 ```bash
   cd website
 ```
 
-#### 5️. Make Migrations
+#### 6. Make Migrations
 ```bash
   python manage.py makemigrations
 ```
 
-#### 6️. Migrate It
+#### 7. Migrate It
 ```bash
   python manage.py migrate
 ```
 
-#### 7️. Create Superuser
+#### 8. Create Superuser
 ```bash
   python manage.py createsuperuser
 ```
 
-#### 8️. Run Server
+#### 9. Run Server
 ```bash
   python manage.py runserver
 ```
