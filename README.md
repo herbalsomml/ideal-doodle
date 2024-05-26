@@ -1,14 +1,15 @@
-# Catalog of webcam studios
+# Personal Onlyfans Model Website
 
-Catalog of webcam studios with search, filtering and display priority
+Pernosal website for the Onlyfans model with the ability to add previews of new videos
 
+⛏️ **This is not a finished version, just a project in development** ⛏️
 
 📚 Libs:
 -
 - Django
-- Jazzmin
 - Pillow
 - django-bootstrap5
+
 
 
 ## 👨🏻‍💻 How to install:
@@ -35,7 +36,7 @@ Windows:
 
 #### 4. Copy .env.example, rename it to .env and fill with your data
 
-#### 5. Go to website:
+#### 5. Go to MemberInfoWeb:
 ```bash
   cd website
 ```

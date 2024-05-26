@@ -1,297 +1,101 @@
-from datetime import timedelta
-
-from django.core.exceptions import ValidationError
-from django.core.validators import MaxValueValidator, MinValueValidator
 from django.db import models
 from django.utils import timezone
 
 
-class City(models.Model):
-    name = models.CharField(max_length=100)
-
-    def __str__(self):
-        return self.name
-
-    class Meta:
-        verbose_name = 'Город'
-        verbose_name_plural = 'Города'
-
-
-class ExperienceChoices(models.Model):
-    name = models.CharField(max_length=100)
-    icon = models.CharField(max_length=128)
-
-    def __str__(self):
-        return self.name
-
-    class Meta:
-        verbose_name = 'Опыт работы'
-        verbose_name_plural = 'Опыт работы'
-
-
-class FormatChoices(models.Model):
-    name = models.CharField(max_length=100)
-    icon = models.CharField(max_length=128)
-
-    def __str__(self):
-        return self.name
+class Question(models.Model):
+    question = models.CharField(
+        max_length=100,
+        blank=False,
+        verbose_name='Вопрос'
+    )
+    answer = models.TextField(
+        blank=False,
+        verbose_name='Ответ'
+    )
+    is_published = models.BooleanField(
+        default=True,
+        verbose_name='Опубликовано',
+        help_text='Снимите галочку, чтобы скрыть публикацию.'
+    )
+    created_at = models.DateTimeField(
+        auto_now_add=True,
+        verbose_name='Добавлено'
+    )
+    position = models.IntegerField()
 
     class Meta:
-        verbose_name = 'Тип студии'
-        verbose_name_plural = 'Типы студий'
-
-
-class GenderChoices(models.Model):
-    name = models.CharField(max_length=100)
-    icon = models.CharField(max_length=128)
+        verbose_name = 'вопрос'
+        verbose_name_plural = 'Вопросы'
+        ordering = ('position',)
+        default_related_name = 'questions'
 
     def __str__(self):
-        return self.name
-
-    class Meta:
-        verbose_name = 'Гендер'
-        verbose_name_plural = 'гендеры'
+        if len(self.question) > 25:
+            return self.question[:25] + '...'
+        return self.question
 
 
-class PayoutsChoices(models.Model):
-    name = models.CharField(max_length=100)
-    icon = models.CharField(max_length=128)
-
-    def __str__(self):
-        return self.name
-
-    class Meta:
-        verbose_name = 'Выплата'
-        verbose_name_plural = 'выплаты'
-
-
-class ShiftsChoices(models.Model):
-    name = models.CharField(max_length=100)
-    icon = models.CharField(max_length=128)
-
-    def __str__(self):
-        return self.name
-
-    class Meta:
-        verbose_name = 'Смена'
-        verbose_name_plural = 'смены'
-
-
-class Studio(models.Model):
-
-    name = models.CharField(
+class Video(models.Model):
+    title = models.CharField(
         max_length=90,
         blank=False,
-        verbose_name='Название cтудии'
+        verbose_name='Название видео'
     )
-
-    slug = models.SlugField(
-        max_length=128,
-        blank=False
+    short_description = models.CharField(
+        max_length=50,
+        blank=False,
+        verbose_name='Короткое описание',
     )
-
-    image = models.ImageField(
-        verbose_name='Изображение',
-    )
-
     description = models.TextField(
         verbose_name='Полное описание'
     )
-
-    telegram = models.CharField(
-        verbose_name='Телеграм аккаунт',
-        blank=True,
-        max_length=128
-    )
-
-    website = models.URLField(
-        verbose_name='Ссылка на сайт',
-        blank=True,
-        max_length=258
-    )
-
-    phone = models.CharField(
-        verbose_name='Номер телефона',
-        blank=True,
-        max_length=40
-    )
-
-    cities = models.ManyToManyField(
-        City,
-        verbose_name='Города работы',
-        blank=False
-    )
-
-    experience = models.ManyToManyField(
-        ExperienceChoices,
-        verbose_name='Опыт работы',
-    )
-
-    format = models.ManyToManyField(
-        FormatChoices,
-        verbose_name='Формат работы',
-    )
-
-    gender = models.ManyToManyField(
-        GenderChoices,
-        verbose_name='Гендер',
-        blank=False
-    )
-
-    english = models.BooleanField(
-        default=False,
-        verbose_name='Требуется ли знание английского'
-    )
-
-    min_age = models.IntegerField(
-        default=18,
-        verbose_name='Минимальный возраст модели',
-        validators=[
-            MinValueValidator(18),
-            MaxValueValidator(85)
-        ],
-    )
-
-    max_age = models.IntegerField(
-        default=60,
-        verbose_name='Максильмальный возраст модели',
-        validators=[
-            MinValueValidator(18),
-            MaxValueValidator(85)
-        ],
-    )
-
-    payouts = models.ManyToManyField(
-        PayoutsChoices,
-        verbose_name='Выплаты',
-    )
-
-    min_percent = models.IntegerField(
-        default=50,
-        verbose_name='Минимальный процент выплаты модели',
-        validators=[
-            MinValueValidator(10),
-            MaxValueValidator(100)
-        ],
-    )
-
-    max_percent = models.IntegerField(
-        default=90,
-        verbose_name='Максимальный процент выплаты модели',
-        validators=[
-            MinValueValidator(10),
-            MaxValueValidator(100)
-        ],
-    )
-
-    shifts = models.ManyToManyField(
-        ShiftsChoices,
-        verbose_name='Смены',
-    )
-
-    operator = models.BooleanField(
-        default=False,
-        verbose_name='Наличие оператора',
-    )
-
-    is_it_premium = models.BooleanField(
-        default=False,
-        verbose_name='Это премиум размещение?'
-    )
-
-    contact_button_icon = models.CharField(
-        default='fa-solid fa-message',
-        verbose_name='Иконка кнопки связаться для премиума',
-        max_length=128,
-        blank=True
-    )
-
-    contact_button_text = models.CharField(
-        default='Связаться',
-        verbose_name='Текст кнопки связи для премиума',
-        max_length=256,
-        blank=True
-    )
-
-    contact_button_link = models.CharField(
-        default='#',
-        max_length=128,
-        verbose_name='Ссылка для кнопки связаться премиума',
-        blank=True
-    )
-
-    is_it_top = models.BooleanField(
-        default=False,
-        verbose_name='Это TOP размещение?'
-    )
-
-    when_it_ends = models.DateTimeField(
-        default=None,
-        blank=True,
-        null=True
-    )
-
-    class Meta:
-        verbose_name = 'Студия'
-        verbose_name_plural = 'студии'
-
-    def __str__(self):
-        return f'{self.name}'
-
-    def clean(self):
-        super().clean()
-        if self.min_age > self.max_age:
-            raise ValidationError({
-                'min_age': 'min_age не может быть больше max_age',
-                'max_age': 'max_age не может быть меньше min_age'
-            })
-
-        if self.min_percent > self.max_percent:
-            raise ValidationError({
-                'min_percent': 'min_percent не может быть больше max_percent',
-                'max_percent': 'max_percent не может быть меньше min_percent'
-            })
-
-    def save(self, *args, **kwargs):
-        if self.when_it_ends is None:
-            self.when_it_ends = timezone.now() + timedelta(days=30)
-        super(Studio, self).save(*args, **kwargs)
-
-
-class MiniAd(models.Model):
-    name = models.CharField(
-        blank=False,
-        max_length=50,
-        verbose_name='Название'
-    )
     link = models.URLField(
-        max_length=258,
-        verbose_name='Ссылка'
+        blank=False
     )
-    small_image = models.ImageField(
-        verbose_name='Для маленьких устройств'
+    is_published = models.BooleanField(
+        default=True,
+        verbose_name='Опубликовано',
+        help_text='Снимите галочку, чтобы скрыть публикацию.'
     )
-    medium_image = models.ImageField(
-        verbose_name='Для средних устройств'
+    created_at = models.DateTimeField(
+        auto_now_add=True,
+        verbose_name='Добавлено'
     )
-    large_image = models.ImageField(
-        verbose_name='Для больших устройств'
+    pub_date = models.DateTimeField(
+        verbose_name='Дата и время публикации',
+        help_text=('Если установить дату и время в будущем'
+                   ' — можно делать отложенные публикации.')
     )
-    when_it_ends = models.DateTimeField(
-        default=None,
-        blank=True,
-        null=True,
-        verbose_name='До какого момента будет отображаться на сайте'
+    slug = models.SlugField(
+        unique=True,
+        verbose_name='Идентификатор',
+        help_text=('Идентификатор страницы для URL;'
+                   ' разрешены символы латиницы,'
+                   ' цифры, дефис и подчёркивание.')
     )
-
-    def __str__(self):
-        return f'{self.name}'
-
-    def save(self, *args, **kwargs):
-        if self.when_it_ends is None:
-            self.when_it_ends = timezone.now() + timedelta(days=30)
-        super(Studio, self).save(*args, **kwargs)
+    image = models.ImageField('Фото', upload_to='video_images', blank=False)
+    to_slider = models.BooleanField(
+        default=False,
+        verbose_name='Добавить в слайдер'
+    )
 
     class Meta:
-        verbose_name = 'Мини реклама'
-        verbose_name_plural = 'Мини реклама'
+        verbose_name = 'видео'
+        verbose_name_plural = 'Видео'
+        ordering = ('-pub_date',)
+        default_related_name = 'videos'
+
+    def __str__(self):
+        if len(self.title) > 25:
+            return self.title[:25] + '...'
+        return self.title
+
+    @staticmethod
+    def get_published_videos():
+        current_time = timezone.now()
+        video_list = Video.objects.filter(
+            is_published=True,
+            pub_date__lte=current_time
+        )
+        video_slider_list = video_list.filter(to_slider=True)
+        return video_list, video_slider_list

@@ -1,0 +1,30 @@
+        <!-- Social media -->
+        <hr>
+        <div class="container mt-5 mb-5">
+          <div class="row">
+              <div class="col-md-6 d-flex justify-content-center align-items-center">
+                <img class="shadow-lg d-img" src="{{ settings_list.social_media_block_image.url }}">
+            </div>
+    
+            <div class="col-md-6">
+              <h1 class="text-center text-dark font-weight-normal mb-5 mt-5" id="links">{{ settings_list.social_media_block_header }}</h1>
+              {% autoescape off %}{{ settings_list.social_media_block_text | safe }}{% endautoescape %}
+              <div class="btn-instagram-borders mb-3">
+                <a target="_blank" class="text-decoration-none" href="{{ settings_list.instagram_url }}">
+                <button class="btn-instagram"><i class="fa fa-instagram"></i> Instagram</button>
+                </a>
+              </div>
+              <div class="btn-twitter-borders mb-3">
+                <a target="_blank" class="text-decoration-none" href="{{ settings_list.twitter_url }}">
+                <button class="btn-twitter"><i class="fa fa-twitter"></i> Twitter</button>
+                </a>
+              </div>
+              <div class="btn-telegram-borders mb-3">
+                <a target="_blank" class="text-decoration-none" href="{{ settings_list.telegram_url }}">
+                <button class="btn-telegram"><i class="fa fa-key"></i> Telegram channel</button>
+                </a>
+              </div>
+          </div>
+          </div>
+      </div>
+    

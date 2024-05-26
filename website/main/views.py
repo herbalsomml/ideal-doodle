@@ -1,93 +1,49 @@
-from itertools import chain
-
-from constance import config
-from django.db.models import BooleanField, Case, Value, When
-from django.db.models.functions import Random
+from django.conf import settings
+from django.http import JsonResponse
+from django.shortcuts import render
 from django.utils import timezone
-from django.views.generic import DetailView, ListView
+from django.views.generic import ListView, View
 
-from .forms import StudioSearchForm
-from .models import MiniAd, Studio
+from settings.models import SiteSettings
 
-
-class StudioDetailView(DetailView):
-    model = Studio
-    template_name = 'main/studio.html'
-    context_object_name = 'studio'
-    slug_url_kwarg = 'slug'
-
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context['config'] = config
-        return context
+from .models import Question, Video
 
 
-class StudioListView(ListView):
-    model = Studio
+class VideoListView(ListView):
+    model = Video
     template_name = 'main/index.html'
-    context_object_name = 'studios'
+    context_object_name = 'video_list'
 
     def get_queryset(self):
-        return Studio.objects.filter(
-            when_it_ends__gt=timezone.now()
-        )
+        return Video.objects.filter(
+            is_published=True,
+            pub_date__lte=timezone.now()
+        ).order_by('-pub_date')
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        top_studios_list = self.get_queryset().filter(
-            is_it_top=True
-        ).annotate(random_order=Random()).order_by('random_order')
-        usuall_studios_list = self.get_queryset().filter(
-            is_it_top=False
-        ).annotate(random_order=Random()).order_by('random_order')
-        context['premium_studios_list'] = self.get_queryset().filter(
-            is_it_premium=True
-        ).annotate(random_order=Random()).order_by('random_order')
-        context['all_studios_list'] = list(chain(
-            top_studios_list,
-            usuall_studios_list
-        ))
-        context['form'] = StudioSearchForm(self.request.GET)
-        context['mini_ads'] = MiniAd.objects.filter(
-            when_it_ends__gt=timezone.now()
-        )
-        context['config'] = config
+        video_slider_list = self.get_queryset().filter(to_slider=True)
+        questions_list = Question.objects.filter(
+            is_published=True
+        ).order_by('position')
+        settings_list = SiteSettings.objects.first()
+        context['settings_list'] = settings_list
+        context['questions_list'] = questions_list
+        if video_slider_list.exists():
+            context['video_slider_list'] = video_slider_list
         return context
 
 
-class StudioSearchList(ListView):
-    model = Studio
-    template_name = 'main/search.html'
-    context_object_name = 'studios'
-    paginate_by = 12
-
-    def get_queryset(self):
-        queryset = super().get_queryset()
-        form = StudioSearchForm(self.request.GET)
-        if form.is_valid():
-            experiences = form.cleaned_data.get('experience')
-            cities = form.cleaned_data.get('cities')
-            format = form.cleaned_data.get('format')
-            gender = form.cleaned_data.get('gender')
-            if experiences:
-                queryset = queryset.filter(experience__in=experiences)
-            if cities:
-                queryset = queryset.filter(cities__in=cities)
-            if format:
-                queryset = queryset.filter(format__in=format)
-            if gender:
-                queryset = queryset.filter(gender__in=gender)
-        queryset = queryset.annotate(
-            is_it_top_boolean=Case(
-                When(is_it_top=True, then=Value(True)),
-                default=Value(False),
-                output_field=BooleanField(),
-            )
-        ).order_by('-is_it_top_boolean', '?')
-        return queryset.distinct()
-
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context['form'] = StudioSearchForm(self.request.GET)
-        context['config'] = config
-        return context
+class VideoJsonListView(View):
+    def get(self, *args, **kwargs):
+        print(kwargs)
+        upper = kwargs.get('num_videos')
+        lower = upper - 6
+        videos = Video.objects.filter(
+            is_published=True,
+            pub_date__lte=timezone.now()
+        ).order_by('-pub_date')
+        videos = list(videos.values())[lower:upper]
+        videos_size = len(Video.objects.all())
+        size = True if upper >= videos_size else False
+        return JsonResponse({'data': videos, 'max': size}, safe=False)

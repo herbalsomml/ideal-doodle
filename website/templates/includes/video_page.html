@@ -1,0 +1,22 @@
+  <!-- Videos -->
+  {% load static %}
+  <div class="album mt-5">
+    <h1 class="text-center text-dark mb-5 font-weight-normal" id="videos">{{ settings_list.videos_block_header }}</h1>
+    <div class="container" style="padding: 0;">
+      <div id="videos-box" class="row d-">
+
+      </div>
+    </div>
+  </div>
+  <div class="form-row text-center">
+    <div id="spinner-box" class="not-visible">
+      <div class="spinner-border text-dark mb-3" role="status">
+      </div>
+    </div>
+    <div id="loading-box" class="col-12">
+      <button id="load-btn" class="btn-load px-4 py-2 fs-5 mb-3" role="button" type="submit">{{ settings_list.load_more_button_text }}</button>
+    </div>
+      <!-- Videos Load JS -->
+  <script src="{% static 'assets/js/videos.js' %}"></script>
+  </div>
+
