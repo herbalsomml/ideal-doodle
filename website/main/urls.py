@@ -5,8 +5,11 @@ from . import views
 app_name = 'main'
 
 urlpatterns = [path('',
-                    views.VideoListView.as_view(),
+                    views.StudioListView.as_view(),
                     name='index'),
-               path('videos-json/<int:num_videos>/',
-                    views.VideoJsonListView.as_view(),
-                    name='video-json-view')]
+               path('search/',
+                    views.StudioSearchList.as_view(),
+                    name='studio_search'),
+               path('studio/<slug:slug>/',
+                    views.StudioDetailView.as_view(),
+                    name='studio_detail'),]

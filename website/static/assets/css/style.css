@@ -1,1 +1,226 @@
-.a-img,.b-img,.d-img{background-color:#34495e;object-fit:cover}.a-img,.b-img,.b-img:before,.d-img{object-fit:cover}.b-img,.b-img:before,.d-img,.items-wrap{overflow:hidden}.item,h1{font-weight:700;color:#fff}*,.btn-load{box-sizing:border-box}.btn-load,.item,h1{color:#fff}.item,.items,.items-wrap{display:flex}.a-item{max-width:1920px;max-height:550px}.a-img{height:550px;filter:brightness(.6)}.b-img,.b-item{height:480px}.a-img:before{content:"Nothing loaded"}.b-img:before{content:"";position:absolute;height:480px;width:80%;background-image:url("https://img.freepik.com/free-photo/vertical-shot-cute-cat-background-field_181624-56606.jpg");background-size:cover;background-position:center}.btn-chaturbate:hover,.btn-fansly:hover,.btn-instagram:hover,.btn-stripchat:hover,.btn-telegram:hover,.btn-twitter:hover{background-position:40%}.d-img{max-height:auto;width:75%}.video-card{transition:transform .3s ease-in-out}.video-card:hover{transform:scale(1.1)}*{padding:0;margin:0;font:16px/1.4 sans-serif}h1{font-size:2em}.wrap{background:#1e2124;max-width:100%;margin:auto;padding-top:10px;padding-bottom:10px}.items-wrap{position:relative;user-select:none}.items{flex-shrink:0;counter-reset:item;justify-content:space-around;min-width:100%}.item{background:#ccc;flex:0 0 auto;width:100px;height:100px;counter-increment:item;border-radius:6px;justify-content:center;align-items:center;font-size:25px;margin:10px 0;transition:.1s ease-in-out}#btn-top,.btn-load{background-color:#1e2124}.item:before{content:counter(item)}.marquee{animation:20s linear infinite scroll}.reverce{animation-direction:reverse}@keyframes scroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}.btn-load{appearance:button;background-image:none;border:1px solid #000;border-radius:4px;box-shadow:#fff 4px 4px 0 0,#000 4px 4px 0 1px;cursor:pointer;display:inline-block;font-family:ITCAvantGardeStd-Bk,Arial,sans-serif;font-size:14px;font-weight:400;line-height:20px;margin:0 5px 10px 0;overflow:visible;padding:12px 40px;text-align:center;text-transform:none;touch-action:manipulation;user-select:none;-webkit-user-select:none;vertical-align:middle;white-space:nowrap}.btn-load:hover{text-decoration:none}.btn-load:active{box-shadow:rgba(0,0,0,.125) 0 3px 5px inset;outline:0}.btn-load:not([disabled]):active{box-shadow:#fff 2px 2px 0 0,#000 2px 2px 0 1px;transform:translate(2px,2px)}.btn-subscribe{padding:15px 20px;border:none;outline:0;background-color:#6c5ce7;color:#fff;border-radius:7px;font-weight:600;cursor:pointer;transition:.25s ease-out}.btn-fansly,.btn-watch{cursor:pointer;font-weight:700}.btn-subscribe:hover{transform:translateY(-3px)}.btn-subscribe-span{color:#dfe6e9}.btn-watch{-moz-appearance:none;-webkit-appearance:none;appearance:none;border:none;background:0 0;color:none;position:relative;padding:8px;margin-bottom:20px;text-transform:uppercase;font-size:14px;transition:.15s}.btn-watch::after,.btn-watch::before{content:'';display:block;position:absolute;right:0;left:0;height:calc(50% - 5px);border:2px solid #fff;transition:.15s}.btn-chaturbate:after,.btn-chaturbate:before,.btn-fansly:after,.btn-fansly:before,.btn-instagram:after,.btn-instagram:before,.btn-stripchat:after,.btn-stripchat:before,.btn-telegram:after,.btn-telegram:before,.btn-twitter:after,.btn-twitter:before{transition:background-color .15s ease-in-out}.btn-watch::before{top:0;border-bottom-width:0}.btn-watch::after{bottom:0;border-top-width:0}.btn-watch:active::before{top:3px;left:6px;right:6px}.btn-watch:active::after{bottom:3px;left:6px;right:6px}.btn-watch_lg{position:relative;display:block;padding:10px 20px;color:#fff;background-color:none;overflow:hidden;box-shadow:inset 0 0 0 1px transparent}.btn-fansly,.btn-fansly:after,.btn-fansly:before,.btn-watch_sl{background-color:#008ee8}.btn-watch_sl{display:block;position:absolute;top:0;bottom:-1px;left:-8px;width:0;transform:skew(-15deg);transition:.2s}#btn-top,.not-visible{display:none}.btn-chaturbate,.btn-fansly,.btn-watch_text{position:relative}.btn-watch:hover{color:#0f1923}.btn-watch:hover .button_sl{width:calc(100% + 15px)}.btn-chaturbate:hover:after,.btn-chaturbate:hover:before,.btn-fansly:hover:after,.btn-fansly:hover:before,.btn-instagram:hover:after,.btn-instagram:hover:before,.btn-stripchat:hover:after,.btn-stripchat:hover:before,.btn-telegram:hover:after,.btn-telegram:hover:before,.btn-twitter:hover:after,.btn-twitter:hover:before,.btn-watch:hover .button_lg::after{background-color:#fff}.btn-fansly{font-family:'Ropa Sans',sans-serif;color:#fff;font-size:13px;letter-spacing:.05rem;border:1px solid #008ee8;padding:.8rem 2.1rem;background-size:200%;background-position:200%;background-repeat:no-repeat;transition:.3s ease-in-out;transition-property:background-position,border,color;z-index:1}.btn-chaturbate,.btn-stripchat{font-family:'Ropa Sans',sans-serif;cursor:pointer;font-size:13px;font-weight:700;letter-spacing:.05rem;padding:.8rem 2.1rem;background-size:200%;background-position:200%;background-repeat:no-repeat;transition:.3s ease-in-out}.btn-fansly:hover{border:1px solid #008ee8;color:#fff}.btn-fansly:before{content:"";position:absolute;width:.2rem;height:.2rem;top:-1px;left:-1px}.btn-fansly:after{content:"";position:absolute;width:.3rem;height:.3rem;bottom:-1px;right:-1px}.btn-fansly-borders:after,.btn-fansly-borders:before{width:calc(100% + .5em);height:50%;left:-.3em;content:"";position:absolute}.btn-chaturbate-borders,.btn-fansly-borders,.btn-instagram-borders,.btn-stripchat-borders,.btn-telegram-borders,.btn-twitter-borders{position:relative;width:fit-content;height:fit-content}.btn-fansly-borders:before{top:-.3em;border:2px solid #008ee8;border-bottom:0}.btn-fansly-borders:after{bottom:-.3em;border:2px solid #008ee8;border-top:0;z-index:0}.shape{fill:#0E1822}.btn-chaturbate{color:#fff;border:1px solid #f6863d;background-color:#f6863d;transition-property:background-position,border,color;z-index:1}.btn-chaturbate:hover{border:1px solid #f6863d;color:#fff}.btn-chaturbate:before{content:"";position:absolute;background-color:#f6863d;width:.2rem;height:.2rem;top:-1px;left:-1px}.btn-chaturbate:after{content:"";position:absolute;background-color:#f6863d;width:.3rem;height:.3rem;bottom:-1px;right:-1px}.btn-chaturbate-borders:after,.btn-chaturbate-borders:before{width:calc(100% + .5em);height:50%;left:-.3em;content:"";position:absolute}.btn-chaturbate-borders:before{top:-.3em;border:2px solid #f6863d;border-bottom:0}.btn-chaturbate-borders:after{bottom:-.3em;border:2px solid #f6863d;border-top:0;z-index:0}.btn-stripchat,.btn-stripchat:hover{border:1px solid #96202c;color:#fff}.btn-stripchat{background-color:#96202c;transition-property:background-position,border,color;position:relative;z-index:1}.btn-instagram,.btn-twitter{transition:.3s ease-in-out;font-family:'Ropa Sans',sans-serif;font-size:13px;font-weight:700;letter-spacing:.05rem;padding:.8rem 2.1rem;background-size:200%;background-position:200%;background-repeat:no-repeat;position:relative;z-index:1;cursor:pointer}.btn-stripchat:before{content:"";position:absolute;background-color:#96202c;width:.2rem;height:.2rem;top:-1px;left:-1px}.btn-stripchat:after{content:"";position:absolute;background-color:#96202c;width:.3rem;height:.3rem;bottom:-1px;right:-1px}.btn-stripchat-borders:after,.btn-stripchat-borders:before{width:calc(100% + .5em);height:50%;left:-.3em;content:"";position:absolute}.btn-stripchat-borders:before{top:-.3em;border:2px solid #96202c;border-bottom:0}.btn-stripchat-borders:after{bottom:-.3em;border:2px solid #96202c;border-top:0;z-index:0}.btn-instagram,.btn-instagram:hover{border:1px solid #e1595d;color:#fff}.btn-instagram{background-color:#e1595d;transition-property:background-position,border,color}.btn-instagram:before{content:"";position:absolute;background-color:#e1595d;width:.2rem;height:.2rem;top:-1px;left:-1px}.btn-instagram:after{content:"";position:absolute;background-color:#e1595d;width:.3rem;height:.3rem;bottom:-1px;right:-1px}.btn-instagram-borders:after,.btn-instagram-borders:before{width:calc(100% + .5em);height:50%;left:-.3em;content:"";position:absolute}.btn-instagram-borders:before{top:-.3em;border:2px solid #e1595d;border-bottom:0}.btn-instagram-borders:after{bottom:-.3em;border:2px solid #e1595d;border-top:0;z-index:0}.btn-twitter,.btn-twitter:hover{border:1px solid #0095e8;color:#fff}.btn-twitter{background-color:#0095e8;transition-property:background-position,border,color}.btn-twitter:before{content:"";position:absolute;background-color:#0095e8;width:.2rem;height:.2rem;top:-1px;left:-1px}.btn-twitter:after{content:"";position:absolute;background-color:#0095e8;width:.3rem;height:.3rem;bottom:-1px;right:-1px}.btn-twitter-borders:after,.btn-twitter-borders:before{width:calc(100% + .5em);height:50%;left:-.3em;content:"";position:absolute}.btn-twitter-borders:before{top:-.3em;border:2px solid #0095e8;border-bottom:0}.btn-twitter-borders:after{bottom:-.3em;border:2px solid #0095e8;border-top:0;z-index:0}.btn-telegram,.btn-telegram:hover{border:1px solid #0ea1d7;color:#fff}.btn-telegram{font-family:'Ropa Sans',sans-serif;cursor:pointer;font-size:13px;font-weight:700;letter-spacing:.05rem;padding:.8rem 2.1rem;background-color:#0ea1d7;background-size:200%;background-position:200%;background-repeat:no-repeat;transition:.3s ease-in-out;transition-property:background-position,border,color;position:relative;z-index:1}.btn-telegram:before{content:"";position:absolute;background-color:#0ea1d7;width:.2rem;height:.2rem;top:-1px;left:-1px}.btn-telegram:after{content:"";position:absolute;background-color:#0ea1d7;width:.3rem;height:.3rem;bottom:-1px;right:-1px}.btn-telegram-borders:after,.btn-telegram-borders:before{content:"";position:absolute;width:calc(100% + .5em);height:50%;left:-.3em}.btn-telegram-borders:before{top:-.3em;border:2px solid #0ea1d7;border-bottom:0}.btn-telegram-borders:after{bottom:-.3em;border:2px solid #0ea1d7;border-top:0;z-index:0}#btn-top{position:fixed;bottom:20px;right:30px;z-index:99;font-size:18px;border:none;outline:0;color:#fff;cursor:pointer;padding:15px;border-radius:4px}#btn-top:hover{background-color:#555}#loader-wrapper{position:fixed;width:100%;height:100%;top:0;left:0;background-color:#f8f9fa;display:flex;align-items:center;justify-content:center;z-index:9999}#loader{border:16px solid #212429;border-top:16px solid #f8f9fa;border-radius:50%;width:120px;height:120px;animation:2s linear infinite spin}.loader-section{position:fixed;top:0;width:51%;height:100%;background-color:#f3f3f3}.section-left{left:0}.section-right{right:0}@keyframes spin{0%{transform:rotate(0)}100%{transform:rotate(360deg)}}
+h1 {
+    font-family: 'Gills Sans', sans-serif;
+    font-weight: 600;
+  }
+  p {
+    font-family: 'Arial';
+    font-size: 21px;
+  }
+
+.navbar-brand {
+    position: relative;
+    background-image: url("../img/logo.png");
+    width: 170px;
+    height: 40px;
+    background-size: contain;
+}
+
+.bg-pink {
+    background-color: #fd79a8;
+}
+
+.bg-purple {
+    background-color: #a29bfe;
+}
+
+.bg-green {
+    background-color: #00b894;
+}
+
+.bg-blue {
+    background-color: #0984e3;
+}
+
+.bg-yellow {
+    background-color: #fdcb6e;
+}
+
+.btn-rounded {
+    padding: 0px 25px 0px 25px;
+    color: #ffffff;
+    font-size: 18px;
+    height: 50px;
+    line-height: 1.55;
+    border-radius: 60px;
+    background-position: center center;
+    border-color: rgba(255,255,255,.55);
+    border-style: solid;
+}
+
+
+.card-props {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin: -.18rem;
+}
+
+.card-prop {
+    background: #f3f3f4;
+    color: #212529;
+    border-radius: .32rem;
+    font-weight: 500;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    line-height: 1.3;
+    letter-spacing: -.01rem;
+    font-size: .82rem;
+    padding: .25rem .69rem .19rem;
+    margin: .19rem;
+}
+
+.card-prop.active {
+    background: #00b894;
+    color: white;
+    font-weight: 500;
+}
+
+.vip-studio {
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #fbfbfb;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.3;
+    letter-spacing: -.02rem;
+    text-transform: uppercase;
+    padding: .32rem 1.07rem .32rem .94rem;
+    border-radius: 15px 0;
+}
+
+.round-it {
+    border-radius: 15px;
+}
+
+.purple-text {
+    color: #a29bfe;
+}
+
+.yellow-text {
+    color: #fdcb6e
+}
+
+.green-text {
+    color: #00b894
+}
+
+.green-text:hover {
+    color: #00b894
+}
+
+.gray {
+    color: #2d3436;
+}
+
+.ad-img {
+    max-width: 80%;
+    border-radius: 15px;
+}
+
+.cover-43 {
+    object-fit: cover;
+    aspect-ratio: 4 / 3;
+}
+
+a {
+    text-decoration: none;
+}
+
+.dropdown-menu {
+    max-height: 200px; /* Ограничиваем высоту */
+    overflow-y: auto; /* Добавляем прокрутку */
+  }
+
+.dropdown-toggle-c {
+    height: 50px;
+    width: 100%;
+    border-radius: 15px;
+}
+
+.dropdown-toggle-c::before {
+    content: "\f13a"; /* Unicode для fa-chevron-circle-down */
+    font-family: "Font Awesome 5 Free"; /* Указание шрифта Font Awesome */
+    font-weight: 900; /* Указание жирности шрифта для правильного отображения иконки */
+    padding-right: 0.3em; /* Отступ слева, чтобы имитировать класс me-2 (margin-end) */
+}
+
+.btn-little-rounded {
+    padding: 0px 25px 0px 25px;
+    font-size: 18px;
+    height: 50px;
+    width: 100%;
+    line-height: 1.55;
+    border-radius: 15px;
+    background-position: center center;
+    border-color: transparent;
+    border-style: solid;
+}
+
+.dropdown-menu {
+    width: 100%;
+    background-color: #efefef;
+    border-color: transparent;
+}
+
+.form-check-label {
+    font-size: 20;
+    font-weight: 500;
+}
+
+.form-check-input:checked {
+    background-color: #00b894;
+    border-color: transparent;
+}
+
+.img-studio {
+    width: 1200px;
+    height: 910px;
+    object-fit: cover;
+}
+
+.image-container img {
+    height: 100%;
+    object-fit: cover;
+    width: 100%;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.results {
+    margin-top: 20px;
+}
+
+.results div {
+    margin-bottom: 20px;
+}
+
+.results img {
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+.custom-page-link {
+    position: relative;
+    display: block;
+    padding: var(--bs-pagination-padding-y) var(--bs-pagination-padding-x);
+    font-size: var(--bs-pagination-font-size);
+    text-decoration: none;
+    border: var(--bs-pagination-border-width) solid var(--bs-pagination-border-color);
+}

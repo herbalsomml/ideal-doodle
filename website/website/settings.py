@@ -27,7 +27,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'main',
     'django_bootstrap5',
-    'settings'
+    'pages',
+    'constance',
+    'constance.backends.database',
 ]
 
 MIDDLEWARE = [
@@ -64,12 +66,8 @@ WSGI_APPLICATION = 'website.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.getenv('POSTGRES_DB', 'django'),
-        'USER': os.getenv('POSTGRES_USER', 'django'),
-        'PASSWORD': os.getenv('POSTGRES_PASSWORD', ''),
-        'HOST': os.getenv('DB_HOST', ''),
-        'PORT': os.getenv('DB_PORT', 5432)
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
 
@@ -88,7 +86,7 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'ru-ru'
 
 TIME_ZONE = 'Europe/Paris'
 
@@ -106,4 +104,38 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 MEDIA_ROOT = BASE_DIR / 'media'
 
-VIDEO_LIMIT = 6
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+CSRF_FAILURE_VIEW = 'pages.views.csrf_failure'
+
+CONSTANCE_BACKEND = 'constance.backends.database.DatabaseBackend'
+
+CONSTANCE_CONFIG = {
+    'SITE_NAME': ('Каталог студий Webcam Alice', 'Название сайта'),
+    'CHAT_LINK': ('https://t.me/webcam_alice', 'Ссылка на чат'),
+    'MANAGER_LINK': ('https://t.me/ihatemylifebutiluvmoney', 'Ссылка на менеджера'),
+}
+
+JAZZMIN_SETTINGS = {
+    "site_title": "Каталог студий Webcam Alice",
+
+    # Title on the login screen (19 chars max) (defaults to current_admin_site.site_header if absent or None)
+    "site_header": "Library",
+
+    "site_brand": "Админ-зона",
+
+    "site_logo": None,
+
+    "login_logo": None,
+
+    "login_logo_dark": None,
+
+    "site_icon": "assets/img/herb.png",
+
+    "welcome_sign": "Административная панель",
+
+    # Copyright on the footer
+    "copyright": "Каталог студий Webcam Alice",
+
+    "user_avatar": None,
+}
