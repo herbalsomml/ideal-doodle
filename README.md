@@ -1,5 +1,4 @@
 # Personal Onlyfans Model Website
-## Version 1.0.0
 
 Pernosal website for the Onlyfans model with the ability to add previews of new videos
 
